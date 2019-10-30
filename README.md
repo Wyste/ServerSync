@@ -33,3 +33,17 @@ git clone https://github.com/Wyste/ServerSync.git ServerSync
 ```
 ensure ServerSync
 ```
+
+- Add ACE permissions to use the commands:
+```
+add_principal identifier.steam:110000102D010D9 group.sync #Wyste
+
+add_ace group.sync "changeWeather" allow
+add_ace group.sync "changeTime" allow
+add_ace group.sync "freezeTime" allow
+
+add_ace group.sync command.weather allow
+add_ace group.sync command.time allow
+add_ace group.sync command.freezetime allow
+
+```
