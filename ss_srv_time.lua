@@ -18,6 +18,14 @@ Citizen.CreateThread(function()
     end
 end)
 
+RegisterServerEvent( "addTimeChatSuggests" )
+AddEventHandler( "addTimeChatSuggests", function()
+    if IsPlayerAceAllowed(source, "changeTime") then
+        TriggerClientEvent ("addTimeChatSuggests",source)
+    end
+end)
+
+
 Citizen.CreateThread( function()
     local timeBuffer = 0.0
     local h = 0
@@ -61,15 +69,19 @@ RegisterCommand('time', function(source,args,rawCommand)
         end
     else
         if IsPlayerAceAllowed(source, "changeTime") then
-            ProcessTimeCommand(args[1],args[2])
-            h = math.floor( secondOfDay / 3600 )
-	        m = math.floor( (secondOfDay - (h * 3600)) / 60 )
-            TraceMsg(GetPlayerName(source).." has changed time to " ..string.format("%02d", h)..":"..string.format("%02d",m))
+            if tonumber(args[1]) ~= nil and tonumber(args[2]) ~= nil then
+                ProcessTimeCommand(args[1],args[2])
+                h = math.floor( secondOfDay / 3600 )
+	            m = math.floor( (secondOfDay - (h * 3600)) / 60 )
+                TraceMsg(GetPlayerName(source).." has changed time to " ..string.format("%02d", h)..":"..string.format("%02d",m))
+            else
+                TraceMsg("Invalid syntax, correct syntax is: time <hour> <minute>.",true)
+            end
         else
             TraceMsg('Access for command /time denied for player: '.. GetPlayerName(source),true)
 		end
     end
-end, false)
+end, true)
 
 RegisterCommand('freezetime', function(source,args,rawCommand)
     h = math.floor( secondOfDay / 3600 )
@@ -86,7 +98,7 @@ RegisterCommand('freezetime', function(source,args,rawCommand)
             TraceMsg('Access for command /freezetime denied for player: '.. GetPlayerName(source),true)
 		end
     end
-end, false)
+end, true)
 
 
 function ProcessTimeCommand(arg1,arg2)
@@ -94,12 +106,12 @@ function ProcessTimeCommand(arg1,arg2)
     local m = 0
     local argh = tonumber(arg1)
     local argm = tonumber(arg2)
-    if argh < 24 then
+    if argh < 24 and argh ~= nil then
         h = argh 
     else
         h = 0
     end
-    if argm < 60 then
+    if argm < 60 and arm ~= nil then
         m = argm 
     else
         m = 0

@@ -135,4 +135,4 @@ RegisterCommand('weather', function(source, args)
 		end
 
     end
-end, false)
+end, true)

@@ -47,3 +47,11 @@ Citizen.CreateThread( function()
         NetworkOverrideClockTime( math.floor( secondOfDay / 3600 ), math.floor( (secondOfDay - (h * 3600)) / 60 ), secondOfDay - (math.floor( secondOfDay / 3600 ) * 3600) - (math.floor( (secondOfDay - (h * 3600)) / 60 ) * 60) )
 	end
 end)
+
+RegisterNetEvent("addTimeChatSuggests")
+AddEventHandler("addTimeChatSuggests", function()
+    TriggerEvent('chat:addSuggestion', '/time', 'Change the time.', {
+        { name="hour"  , help="Hour of day in 24 hour format."},
+        { name="minute", help="Minute of the hour."}
+    })
+end)
