@@ -27,7 +27,7 @@ git clone https://github.com/Wyste/ServerSync.git ServerSync
 - Put it in the `resource/ServerSync` directory
 
 ### Installation / Activation
-- Change your options within `ServerSync\config\ServerSync.lua`
+- [Optional] Change your options within `ServerSync\config\ServerSync.lua`
 - Configure your `server.cfg` to look like this
 
 ```
