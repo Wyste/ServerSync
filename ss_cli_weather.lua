@@ -82,5 +82,5 @@ end)
 
 RegisterNetEvent("addWeatherChatSuggests")
 AddEventHandler("addWeatherChatSuggests", function(newWeather,blackout,startup)
-    TriggerEvent('chat:addSuggestion', '/weather', 'Change the weather.', {{ name="weatherType", help="Available types: extrasunny, clear, neutral, smog, foggy, overcast, clouds, clearing, rain, thunder, snow, blizzard, snowlight, xmas"}})
+    TriggerEvent('chat:addSuggestion', '/weather', 'Change the weather.', {{ name="weatherType", help="Available types: extrasunny, clear, neutral, smog, overcast, clouds, clearing, rain, thunder, snow, blizzard, snowlight, xmas"}})
 end)
