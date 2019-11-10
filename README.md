@@ -10,6 +10,15 @@ A FiveM resource to keep all players synchronized with both time and weather, wi
 - Customizable weather patterns
 - Customizable day / night cycle lengths.
 
+## Changelog
+v1.1
+* Added chat suggestion for the /time command.
+* Added error handling for weird /time arguments.
+
+v1.2
+* Fixes Typo error caused by ss_cli_indicators.lua in lines 27 and 31
+* Adds functionality for turning the traffic or crowd modules on/off using `ss_enable_traffic_density` or `ss_enable_crowd_density`
+
 ## Requirements
 - None. You only need this resource.
 
