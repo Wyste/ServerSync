@@ -7,7 +7,8 @@ author 'Wyste (https://github.com/Wyste) | (https://discordapp.com/invite/byNc6w
 version 'v1.0'
 url 'https://github.com/Wyste/ServerSync'
 
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+fx_version 'bodacious'
+game 'gta5'
 
 client_scripts {
     'ss_shared_functions.lua',
