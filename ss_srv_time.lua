@@ -111,7 +111,7 @@ function ProcessTimeCommand(arg1,arg2)
     else
         h = 0
     end
-    if argm < 60 and arm ~= nil then
+    if argm < 60 and argm ~= nil then
         m = argm 
     else
         m = 0
