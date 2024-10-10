@@ -76,6 +76,7 @@ ss_weather_Transition = {
 	["CLEAR"]      = {"CLOUDS","EXTRASUNNY","CLEARING","SMOG","OVERCAST"},
 	["CLOUDS"]     = {"CLEAR","SMOG","CLEARING","OVERCAST"},
 	["OVERCAST"]   = {"CLEAR","CLOUDS","SMOG","CLEARING","THUNDER"},
+	["RAIN"]	   = {"CLEAR", "OVERCAST", "CLOUDS", "CLEARING"},
 	["THUNDER"]    = {"OVERCAST"}, -- Always rotate away from Thunder, as it's annoying
 	["CLEARING"]   = {"CLEAR","CLOUDS","OVERCAST","SMOG"},
 	["SNOW"]       = {"SNOW","SNOWLIGHT"},  -- Usually used for events - never changes and has to be manually set via /weather command
